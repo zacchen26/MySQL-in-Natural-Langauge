@@ -33,11 +33,11 @@ def get_sql_chain(db):
     
     Question: {question}
     SQL Query:
-    """
+    """ 
     
   prompt = ChatPromptTemplate.from_template(template)
   
-  # llm = ChatOpenAI(model="gpt-4-0125-preview")
+  #llm = ChatOpenAI(model="gpt-4-0125-preview")
   llm = ChatGroq(model="mixtral-8x7b-32768", temperature=0)
   
   def get_schema(_):
@@ -65,7 +65,7 @@ def get_response(user_query: str, db: SQLDatabase, chat_history: list):
   
   prompt = ChatPromptTemplate.from_template(template)
   
-  # llm = ChatOpenAI(model="gpt-4-0125-preview")
+  #llm = ChatOpenAI(model="gpt-4-0125-preview")
   llm = ChatGroq(model="mixtral-8x7b-32768", temperature=0)
   
   chain = (
@@ -102,8 +102,8 @@ with st.sidebar:
     st.text_input("Host", value="localhost", key="Host")
     st.text_input("Port", value="3306", key="Port")
     st.text_input("User", value="root", key="User")
-    st.text_input("Password", type="password", value="admin", key="Password")
-    st.text_input("Database", value="Chinook", key="Database")
+    st.text_input("Password", type="password", value="20020120", key="Password")
+    st.text_input("Database", value="sakila", key="Database")
     
     if st.button("Connect"):
         with st.spinner("Connecting to database..."):
